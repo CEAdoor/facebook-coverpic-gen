@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aaroh 2k18</title>
+    <link rel="stylesheet" media="screen" href="<%=req.baseUrl%>/bootstrap.css">  
+    <link rel="stylesheet" media="screen" href="<%=req.baseUrl%>/style.css">
+</head>
+<body ng-app="jimp">
+<div class="container-fluid main" ng-controller="homecontroller" ng-init="startprocess('<%=path %>')">
+    <div class="container">
+            
+            <div class="alert alert-success">
+                    {{message}}
+            </div>
+            <div ng-if="doneUpload">
+            <button class="btn btn-primary" ng-click="displayImage()">Load images</button>
+            </div>
+            <div ng-if="showImage">
+                    <img ng-repeat="x in images" ng-src="<%=req.baseUrl%>/images/{{x}}" style="max-width:80%;"/>
+                    </div>
+    </div>
+   
+</div>
+    <!-- particles.js container -->
+  <div id="particles-js">
+        
+  </div>
+  
+ 
+   <!-- scripts -->
+   <script src="<%=req.baseUrl%>/js/particles.js"></script>
+   <script src="<%=req.baseUrl%>/js/app.js"></script>
+   <script src="<%=req.baseUrl%>/js/bootstrap.js"></script>
+    <script src="<%=req.baseUrl%>/angular/angular.js"></script>
+    <script src="<%=req.baseUrl%>/app.js"></script>
+</body>
+</html>
